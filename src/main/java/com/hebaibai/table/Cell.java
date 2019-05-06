@@ -27,6 +27,10 @@ public class Cell {
     }
 
     public static Cell cell(String val) {
+        if (val == null) {
+            return Cell.NULL();
+        }
+        val = val.replace("\n", "\\\\n");
         Cell cell = new Cell();
         cell.setVal(val);
         return cell;
